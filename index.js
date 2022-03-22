@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+require("dotenv").config();
 
 
 const __dirname = path.resolve(path.dirname(""));
@@ -7,6 +8,7 @@ const __dirname = path.resolve(path.dirname(""));
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded());
 
 
 const port = 3000;
